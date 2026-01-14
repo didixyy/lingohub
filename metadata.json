@@ -1,0 +1,7 @@
+{
+  "name": "FilmVoice AI - Movie English Learning",
+  "description": "A high-end English learning platform that helps users practice English through classic movie clips and AI-powered voice feedback.",
+  "requestFramePermissions": [
+    "microphone"
+  ]
+}

@@ -1,0 +1,148 @@
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>FilmVoice AI</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700;900&family=Inter:wght@400;500;700;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet" />
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'brand-primary': '#FF8E53',
+                        'brand-accent': '#FFB38E',
+                        'warm-beige': '#FDF9F3',
+                        'primary-beige': '#FDF5E6',
+                        'background-warm': '#FAF7F0',
+                        'warm-cream': '#FFF9EF',
+                        'cream': '#FFFDF9',
+                        'accent-coral': '#FF8E8E',
+                        'soft-orange': '#FFB38E',
+                        'deep-beige': '#EADBC8',
+                        'text-main': '#5C4033',
+                        'text-muted': '#8D7B70',
+                        'text-light': '#8D6E63',
+                        'pastel-blue': '#E3F2FD',
+                        'pastel-green': '#E8F5E9',
+                        'pastel-purple': '#F3E5F5',
+                        'pastel-orange': '#FFF3E0'
+                    },
+                    fontFamily: {
+                        sans: ['Noto Sans SC', 'Inter', 'sans-serif'],
+                        display: ['Inter', 'Noto Sans SC', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            background-color: #FDF9F3;
+            color: #5C4033;
+            -webkit-tap-highlight-color: transparent;
+        }
+        .hide-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .hide-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+        .ios-shadow {
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.04);
+        }
+        .ios-shadow-soft {
+            box-shadow: 0 8px 30px -4px rgba(255, 142, 83, 0.12);
+        }
+        .soft-shadow {
+            box-shadow: 0 10px 30px rgba(93, 64, 55, 0.05);
+        }
+        .bubble-float {
+            animation: float 4s ease-in-out infinite;
+        }
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-5px); }
+        }
+        .fill-1 { font-variation-settings: 'FILL' 1; }
+
+        /* AI Analysis Animations */
+        .waveform-bar {
+            background-color: rgba(255, 142, 83, 0.6);
+            border-radius: 9999px;
+            width: 4px;
+        }
+        .pulse-ring {
+            animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+        }
+        @keyframes pulse {
+            0%, 100% { opacity: 1; transform: scale(1); }
+            50% { opacity: 0.5; transform: scale(1.1); }
+        }
+        .dot-flashing {
+            position: relative;
+            width: 6px;
+            height: 6px;
+            border-radius: 5px;
+            background-color: #FF8E53;
+            color: #FF8E53;
+            animation: dotFlashing 1s infinite linear alternate;
+            animation-delay: .5s;
+        }
+        .dot-flashing::before, .dot-flashing::after {
+            content: '';
+            display: inline-block;
+            position: absolute;
+            top: 0;
+        }
+        .dot-flashing::before {
+            left: -12px;
+            width: 6px;
+            height: 6px;
+            border-radius: 5px;
+            background-color: #FF8E53;
+            color: #FF8E53;
+            animation: dotFlashing 1s infinite alternate;
+            animation-delay: 0s;
+        }
+        .dot-flashing::after {
+            left: 12px;
+            width: 6px;
+            height: 6px;
+            border-radius: 5px;
+            background-color: #FF8E53;
+            color: #FF8E53;
+            animation: dotFlashing 1s infinite alternate;
+            animation-delay: 1s;
+        }
+        @keyframes dotFlashing {
+            0% { background-color: #FF8E53; }
+            50%, 100% { background-color: rgba(255, 142, 83, 0.2); }
+        }
+
+        .beige-gradient {
+            background: linear-gradient(180deg, #FDF5E6 0%, #FFF9EF 100%);
+        }
+        .radar-shape {
+            clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+        }
+    </style>
+<script type="importmap">
+{
+  "imports": {
+    "react/": "https://esm.sh/react@^19.2.3/",
+    "react": "https://esm.sh/react@^19.2.3",
+    "react-dom/": "https://esm.sh/react-dom@^19.2.3/",
+    "@google/genai": "https://esm.sh/@google/genai@^1.35.0"
+  }
+}
+</script>
+</head>
+<body class="font-sans">
+    <div id="root"></div>
+</body>
+</html>
